@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — ScrapMetal Intel</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    color: #222;
+    line-height: 1.65;
+    background: #fafaf8;
+  }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 18px; margin-top: 32px; border-bottom: 1px solid #e5e5e5; padding-bottom: 6px; }
+  .meta { color: #888; font-size: 13px; margin-bottom: 32px; }
+  p, li { font-size: 15px; }
+  ul { padding-left: 20px; }
+  a { color: #b87333; }
+  code { background: #f0edea; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<div class="meta">ScrapMetal Intel · Last updated April 8, 2026</div>
+
+<p>
+  ScrapMetal Intel ("the app", "we") is published by Andromeda Kinship LLC.
+  We believe privacy is a feature, not a burden. This policy describes what
+  we do and do not collect, how we handle your data, and what rights you have.
+</p>
+
+<h2>Short version</h2>
+<ul>
+  <li>We do not collect, store, or transmit any personal information about you.</li>
+  <li>All your alerts, log entries, and settings live only on your device.</li>
+  <li>We do not track you. We do not serve ads. We do not sell data. We never will.</li>
+  <li>The app fetches anonymous metal price data from our public server. That server
+    does not log your device identifier, IP address, or any personally identifiable information.</li>
+  <li>Subscription payments are handled entirely by Apple. We receive only the anonymized
+    purchase receipt required to verify your active subscription.</li>
+</ul>
+
+<h2>What we collect</h2>
+<p>Nothing personal. The app does not ask for your name, email address, phone number,
+  location, contacts, photos, or any other personally identifiable information. You do
+  not create an account to use the app.</p>
+
+<h2>What stays on your device</h2>
+<ul>
+  <li>Your price alerts and their configuration</li>
+  <li>Your transaction log entries (date, metal, weight, price, yard, notes)</li>
+  <li>Your app settings (language, notification preferences, theme)</li>
+  <li>A local cache of the most recently fetched price data</li>
+</ul>
+<p>All of the above is stored in the iOS system's local storage and is included in
+  your normal device backup. None of it is transmitted to us or any third party.</p>
+
+<h2>Network requests</h2>
+<p>The app makes two kinds of network requests:</p>
+<ol>
+  <li><strong>Price data fetches.</strong> The app downloads a public JSON file containing
+    current spot prices and daily commentary. This file is served from our Cloudflare CDN
+    and does not require authentication. We do not store request logs that could identify
+    individual users.</li>
+  <li><strong>Subscription validation.</strong> If you subscribe to a paid tier, the
+    RevenueCat SDK communicates with Apple and RevenueCat's servers to verify your
+    subscription status. This is handled by Apple's standard in-app purchase framework.
+    See <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> and
+    <a href="https://www.revenuecat.com/privacy/">RevenueCat's privacy policy</a> for
+    details on how they handle purchase data.</li>
+</ol>
+
+<h2>AI-generated commentary</h2>
+<p>The app displays daily market commentary that is generated server-side by Anthropic's
+  Claude API. This generation happens on our servers once per day — the app itself never
+  sends anything to Anthropic. We pass only public price data (no user information) in
+  the generation prompt. The resulting text is published to our public JSON file and
+  fetched by the app along with the price data.</p>
+
+<h2>No tracking, no ads, no analytics</h2>
+<p>The app does not use the App Tracking Transparency framework because we do not track
+  you. We do not include advertising SDKs. We do not include third-party analytics SDKs.
+  We do not share data with data brokers.</p>
+
+<h2>Children</h2>
+<p>ScrapMetal Intel is not directed at children under 13 and we do not knowingly collect
+  any information from children.</p>
+
+<h2>Data retention and deletion</h2>
+<p>Because all your data is stored locally on your device, you can delete everything at
+  any time by going to Settings → Reset all data inside the app, or by uninstalling the
+  app. There is nothing stored on our servers to delete.</p>
+
+<h2>Changes to this policy</h2>
+<p>If we materially change this policy, we will update the "Last updated" date above and
+  note the change in a future app release. Continued use of the app after a change
+  constitutes acceptance of the updated policy.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:support@andromedakinship.com">support@andromedakinship.com</a></p>
+
+<hr style="margin-top: 48px; border: none; border-top: 1px solid #e5e5e5;">
+<p style="color: #888; font-size: 13px; text-align: center; margin-top: 24px;">
+  © 2026 Andromeda Kinship LLC · Fall River, MA
+</p>
+
+</body>
+</html>
