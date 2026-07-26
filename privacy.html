@@ -26,7 +26,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<div class="meta">ScrapMetal Intel · Last updated April 8, 2026</div>
+<div class="meta">ScrapMetal Intel · Last updated July 26, 2026</div>
 
 <p>
   ScrapMetal Intel ("the app", "we") is published by Andromeda Kinship LLC.
@@ -52,16 +52,20 @@
 
 <h2>What stays on your device</h2>
 <ul>
-  <li>Your price alerts and their configuration</li>
   <li>Your transaction log entries (date, metal, weight, price, yard, notes)</li>
-  <li>Your app settings (language, notification preferences, theme)</li>
+  <li>Your app settings (language, notification preferences, theme, currency)</li>
   <li>A local cache of the most recently fetched price data</li>
+  <li>Your price alerts and their configuration</li>
 </ul>
 <p>All of the above is stored in the iOS system's local storage and is included in
-  your normal device backup. None of it is transmitted to us or any third party.</p>
+  your normal device backup. None of it is transmitted to us or any third party, with
+  one exception: <strong>if you turn on price-alert notifications</strong>, your alert
+  rules are sent to our server so it can notify you while the app is closed. See
+  "Price-alert notifications" below. If you never enable notifications, nothing you
+  enter in the app ever leaves your device.</p>
 
 <h2>Network requests</h2>
-<p>The app makes two kinds of network requests:</p>
+<p>The app makes three kinds of network requests:</p>
 <ol>
   <li><strong>Price data fetches.</strong> The app downloads a public JSON file containing
     current spot prices and daily commentary. This file is served from our Cloudflare CDN
@@ -73,6 +77,14 @@
     See <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> and
     <a href="https://www.revenuecat.com/privacy/">RevenueCat's privacy policy</a> for
     details on how they handle purchase data.</li>
+  <li><strong>Price-alert notifications (only if you enable them).</strong> To send a
+    price alert while the app is closed, our server needs to know what to watch for and
+    where to send it. When you turn notifications on we upload: an anonymous Apple push
+    token for your device, your alert rules (metal, above/below, and your threshold
+    price), and your language code so the notification text is in your language. That is
+    all. No name, email, account, device identifier beyond the push token, or location.
+    The push token is an anonymous, revocable handle issued by Apple — it is not linked
+    to your identity and we do not use it for tracking, advertising or analytics.</li>
 </ol>
 
 <h2>AI-generated commentary</h2>
@@ -92,9 +104,14 @@
   any information from children.</p>
 
 <h2>Data retention and deletion</h2>
-<p>Because all your data is stored locally on your device, you can delete everything at
-  any time by going to Settings → Reset all data inside the app, or by uninstalling the
-  app. There is nothing stored on our servers to delete.</p>
+<p>Your app data is stored locally on your device: you can delete all of it at any time
+  via Settings → Reset all data inside the app, or by uninstalling the app.</p>
+<p>If you enabled price-alert notifications, the push token and alert rules described
+  above are also held on our server. <strong>Turning notifications off in Settings
+  immediately deletes that record</strong>, and the app does so automatically. Deleting
+  the app also invalidates the push token, and we prune tokens that Apple reports as no
+  longer valid. Nothing else about you is stored on our servers, because there is no
+  account.</p>
 
 <h2>Changes to this policy</h2>
 <p>If we materially change this policy, we will update the "Last updated" date above and
