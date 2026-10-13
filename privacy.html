@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — ScrapMetal Intel</title>
+<title>Privacy Policy — Scrap Metal Intel</title>
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -16,110 +16,294 @@
   }
   h1 { font-size: 28px; margin-bottom: 4px; }
   h2 { font-size: 18px; margin-top: 32px; border-bottom: 1px solid #e5e5e5; padding-bottom: 6px; }
+  h3 { font-size: 16px; margin-top: 22px; margin-bottom: 4px; }
   .meta { color: #888; font-size: 13px; margin-bottom: 32px; }
-  p, li { font-size: 15px; }
-  ul { padding-left: 20px; }
+  p, li, td, th { font-size: 15px; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 4px; }
   a { color: #b87333; }
   code { background: #f0edea; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0 4px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid #e5e5e5; }
+  th { font-size: 13px; color: #555; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  .note { color: #555; font-size: 14px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111214; color: #e6e3de; }
+    h2, th, td { border-color: #2a2c30; }
+    .meta, .note, th { color: #9a968f; }
+    code { background: #22242a; }
+    a { color: #d79a5c; }
+  }
 </style>
 </head>
 <body>
 
 <h1>Privacy Policy</h1>
-<div class="meta">ScrapMetal Intel · Last updated July 26, 2026</div>
+<div class="meta">Scrap Metal Intel · Last updated October 13, 2026</div>
 
 <p>
-  ScrapMetal Intel ("the app", "we") is published by Andromeda Kinship LLC.
-  We believe privacy is a feature, not a burden. This policy describes what
-  we do and do not collect, how we handle your data, and what rights you have.
+  Scrap Metal Intel ("the app") is published by Andromeda Kinship LLC ("we", "us"),
+  Fall River, Massachusetts, USA. This policy covers:
 </p>
+<ul>
+  <li>what the app keeps on your phone</li>
+  <li>what it sends off your phone, who receives it and why</li>
+  <li>how long it is kept and how to delete it</li>
+</ul>
+<p>It describes what the app's code actually does as of version 2.2.2.</p>
 
 <h2>Short version</h2>
 <ul>
-  <li>We do not collect, store, or transmit any personal information about you.</li>
-  <li>All your alerts, log entries, and settings live only on your device.</li>
-  <li>We do not track you. We do not serve ads. We do not sell data. We never will.</li>
-  <li>The app fetches anonymous metal price data from our public server. That server
-    does not log your device identifier, IP address, or any personally identifiable information.</li>
-  <li>Subscription payments are handled entirely by Apple. We receive only the anonymized
-    purchase receipt required to verify your active subscription.</li>
+  <li>No account, no ads, and we never sell your data.</li>
+  <li>We don't track you across other companies' apps or websites. That's why the app
+    never shows a tracking-permission prompt.</li>
+  <li>Your haul log, yards, the rates your yards pay, amounts, notes and settings stay on your device.</li>
+  <li>The app does send some data off your phone, to these places:
+    <ul>
+      <li><strong>RevenueCat</strong>, the service that runs our in-app purchases. It receives
+        your purchase history and a few usage counts. These are tied to a random ID the app
+        creates, not to your name or email.</li>
+      <li><strong>Our alert server</strong>, only while notifications are on in the app. It
+        receives a push-notification address for your phone, your alert rules, your language
+        and time zone.</li>
+      <li><strong>Expo</strong>, our push-notification provider, once you have allowed
+        notifications. It receives your phone's push address and an installation ID, and keeps
+        receiving them even if you later turn notifications off (see 2.3).</li>
+      <li><strong>Our price server</strong>, for downloading prices, the same way any web page loads.</li>
+    </ul>
+  </li>
+  <li>We use a few of those counts to see, in total across all users, which features people
+    use and how they found the app. That is analytics, and we're telling you plainly.</li>
 </ul>
 
-<h2>What we collect</h2>
-<p>Nothing personal. The app does not ask for your name, email address, phone number,
-  location, contacts, photos, or any other personally identifiable information. You do
-  not create an account to use the app.</p>
-
-<h2>What stays on your device</h2>
+<h2 id="on-device">1. What stays on your device</h2>
 <ul>
-  <li>Your transaction log entries (date, metal, weight, price, yard, notes)</li>
-  <li>Your app settings (language, notification preferences, theme, currency)</li>
-  <li>A local cache of the most recently fetched price data</li>
-  <li>Your price alerts and their configuration</li>
+  <li>Your haul and inventory log (date, metal, grade, weight, price, total, currency, yard name, notes, sold status)</li>
+  <li>Your yards and the rates they pay</li>
+  <li>Your price alerts</li>
+  <li>Your settings (language, appearance, currency, units, notifications, metal order)</li>
+  <li>A cache of the most recently downloaded prices and commentary</li>
+  <li>Small counters the app uses to decide when to show Apple's rating prompt and its
+    one-time "How did you find ScrapMetal Intel?" card</li>
 </ul>
-<p>All of the above is stored in the iOS system's local storage and is included in
-  your normal device backup. None of it is transmitted to us or any third party, with
-  one exception: <strong>if you turn on price-alert notifications</strong>, your alert
-  rules are sent to our server so it can notify you while the app is closed. See
-  "Price-alert notifications" below. If you never enable notifications, nothing you
-  enter in the app ever leaves your device.</p>
+<p>This data lives in the app's storage on your device and is included in your normal iPhone
+  or iPad backup if you use one. It isn't sent to us or to anyone else, except as described below.</p>
 
-<h2>Network requests</h2>
-<p>The app makes three kinds of network requests:</p>
-<ol>
-  <li><strong>Price data fetches.</strong> The app downloads a public JSON file containing
-    current spot prices and daily commentary. This file is served from our Cloudflare CDN
-    and does not require authentication. We do not store request logs that could identify
-    individual users.</li>
-  <li><strong>Subscription validation.</strong> If you subscribe to a paid tier, the
-    RevenueCat SDK communicates with Apple and RevenueCat's servers to verify your
-    subscription status. This is handled by Apple's standard in-app purchase framework.
-    See <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> and
-    <a href="https://www.revenuecat.com/privacy/">RevenueCat's privacy policy</a> for
-    details on how they handle purchase data.</li>
-  <li><strong>Price-alert notifications (only if you enable them).</strong> To send a
-    price alert while the app is closed, our server needs to know what to watch for and
-    where to send it. When you turn notifications on we upload: an anonymous Apple push
-    token for your device, your alert rules (metal, above/below, and your threshold
-    price), and your language code so the notification text is in your language. That is
-    all. No name, email, account, device identifier beyond the push token, or location.
-    The push token is an anonymous, revocable handle issued by Apple — it is not linked
-    to your identity and we do not use it for tracking, advertising or analytics.</li>
-</ol>
+<h2 id="off-device">2. What leaves your device</h2>
 
-<h2>AI-generated commentary</h2>
-<p>The app displays daily market commentary that is generated server-side by Anthropic's
-  Claude API. This generation happens on our servers once per day — the app itself never
-  sends anything to Anthropic. We pass only public price data (no user information) in
-  the generation prompt. The resulting text is published to our public JSON file and
-  fetched by the app along with the price data.</p>
+<h3 id="prices">2.1 Prices (everyone)</h3>
+<p>The app and its home-screen widget download prices, charts and daily commentary from our
+  server, which runs on Cloudflare. These requests carry only what's needed to answer them:
+  the metal, the chart range, and your language for commentary. They don't include any ID.</p>
+<p>Like any web request, they reveal your IP address to Cloudflare, our hosting provider. Our
+  server code doesn't read or store it.</p>
 
-<h2>No tracking, no ads, no analytics</h2>
-<p>The app does not use the App Tracking Transparency framework because we do not track
-  you. We do not include advertising SDKs. We do not include third-party analytics SDKs.
-  We do not share data with data brokers.</p>
+<h3 id="revenuecat">2.2 Purchases and usage counts (everyone, via RevenueCat)</h3>
+<p>We use <a href="https://www.revenuecat.com/privacy/">RevenueCat</a> (RevenueCat, Inc.) to
+  sell, verify and restore subscriptions and the Forever purchase. The RevenueCat software in
+  the app sends RevenueCat:</p>
+<ul>
+  <li><strong>A random app user ID.</strong> It is created the first time you open the app.
+    It isn't your Apple ID, name or email.</li>
+  <li><strong>Your App Store purchase history for this app.</strong> Apple reports which product
+    you bought, purchase, renewal and expiry dates, trial status, price and currency, billing
+    problems, and cancellations. We never see your payment details. Apple handles payment.</li>
+  <li><strong>Technical details sent with each request:</strong>
+    <ul>
+      <li>Apple's "identifier for vendor", a device ID shared only by apps from the same developer,
+        which resets when you remove all of them</li>
+      <li>iOS version and device model</li>
+      <li>app version</li>
+      <li>App Store country</li>
+      <li>preferred languages</li>
+    </ul>
+  </li>
+  <li><strong>An Apple Ads attribution token.</strong> Apple's AdServices framework creates it on
+    your device. RevenueCat uses it to ask Apple whether you installed the app from an Apple
+    Search Ads campaign, and if so, which campaign, ad group and keyword. It does not use the
+    advertising identifier (IDFA) and does not require tracking permission.</li>
+  <li><strong>A few usage counts</strong>, attached to the random ID above:
+    <ul>
+      <li>which free-plan limits you have reached (for example the 10-entry log limit), how
+        many, and how many days after install you first reached one</li>
+      <li>how many yards you've created, how many times you tapped "Add yard", and how many
+        times you updated a yard's rate from a receipt</li>
+      <li>from version 2.2.2: how many times the app has asked iOS to show Apple's rating
+        prompt, at which moment it last asked, and how many days after install. iOS decides
+        whether the prompt actually appears. We can't see whether you rated the app or what
+        you wrote; Apple doesn't tell developers.</li>
+      <li>from version 2.2.2: your answer to the one-time "How did you find ScrapMetal Intel?"
+        card, if you choose to answer. It is one option from a fixed list such as "TikTok" or
+        "Friend", with no free text.</li>
+    </ul>
+  </li>
+</ul>
+<p>We use this to deliver and restore your purchases, to prevent fraud, and to understand, across
+  all users, which features get used and which ways of finding the app work.</p>
+<p>We don't use it to show you ads. We don't sell it. Apart from the Apple Ads attribution
+  described above, which comes from Apple, we don't combine it with data from other
+  companies.</p>
+<p>Your log entries, yard names, amounts and notes are never sent to RevenueCat.</p>
 
-<h2>Children</h2>
-<p>ScrapMetal Intel is not directed at children under 13 and we do not knowingly collect
-  any information from children.</p>
+<h3 id="alerts">2.3 Price alerts and notifications</h3>
+<p>To alert you while the app is closed, the app sends our alert server, only while
+  notifications are on in the app:</p>
+<ul>
+  <li><strong>A push token.</strong> This is the address our server uses to reach your phone
+    through Expo and Apple's push service.</li>
+  <li><strong>Your active alert rules:</strong> the metal, above or below, and your target price.</li>
+  <li><strong>Your app language</strong>, so the alert is written in your language.</li>
+  <li><strong>From version 2.2.2: your device's time zone (as an offset from UTC) and whether
+    quiet hours are on</strong>, so alerts can be held overnight.</li>
+</ul>
+<p>Our server also notes when each rule last fired, so you don't get repeats.</p>
+<p>To deliver an alert, our server sends the alert text and your push token to
+  <a href="https://expo.dev/privacy">Expo</a> (650 Industries, Inc.). Expo passes it to
+  Apple's push notification service.</p>
+<p>Once you have allowed notifications, the Expo software in the app also sends Expo these
+  things, which Expo uses only to route notifications:</p>
+<ul>
+  <li>your phone's Apple push token</li>
+  <li>an installation ID kept on your device</li>
+  <li>the app's identifiers (its bundle ID and Expo project ID), the token type, and whether
+    the app is a development build</li>
+</ul>
+<p>It sends them each time the app sends your alerts to our alert server or asks it to delete
+  them. It also sends them when you open the app, if your phone's push token has changed or a
+  week has passed since the last time. This continues after you turn notifications off in the
+  app or in iOS Settings, and after you use Reset all data. Expo's software keeps this
+  registration setting in the iOS keychain, so it can also continue after you delete and reinstall the app. The
+  Expo software sends Expo nothing else: no alert rules, log or yard data.</p>
+<p>No name, email, location, log or yard data is sent to the alert server. The alert server's
+  record isn't linked to your RevenueCat data.</p>
 
-<h2>Data retention and deletion</h2>
-<p>Your app data is stored locally on your device: you can delete all of it at any time
-  via Settings → Reset all data inside the app, or by uninstalling the app.</p>
-<p>If you enabled price-alert notifications, the push token and alert rules described
-  above are also held on our server. <strong>Turning notifications off in Settings
-  immediately deletes that record</strong>, and the app does so automatically. Deleting
-  the app also invalidates the push token, and we prune tokens that Apple reports as no
-  longer valid. Nothing else about you is stored on our servers, because there is no
-  account.</p>
+<h3 id="you-share">2.4 Things you choose to send</h3>
+<ul>
+  <li><strong>CSV export and backups.</strong> The file is created on your device. It goes only
+    where you send it from the iOS share sheet. Backup import reads a file you pick and uploads
+    nothing.</li>
+  <li><strong>Contact support.</strong> This opens your email app. We receive what you choose to
+    send (your email address and message) and use it only to reply.</li>
+  <li><strong>Rating the app.</strong> Apple runs the rating prompt and the App Store review page,
+    under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</li>
+</ul>
 
-<h2>Changes to this policy</h2>
-<p>If we materially change this policy, we will update the "Last updated" date above and
-  note the change in a future app release. Continued use of the app after a change
-  constitutes acceptance of the updated policy.</p>
+<h2 id="commentary">3. Daily commentary</h2>
+<p>Our server writes the daily market commentary automatically from price data, using fixed
+  templates. No AI service is involved, and none of your data is used.</p>
 
-<h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:support@andromedakinship.com">support@andromedakinship.com</a></p>
+<h2 id="dont">4. What we don't do</h2>
+<ul>
+  <li>No advertising, no ad SDKs, and no analytics or crash-reporting SDKs (for example Google,
+    Meta or Firebase). The limited usage counts above go only to RevenueCat, which we already
+    use for purchases.</li>
+  <li>No tracking as Apple defines it, and no use of the advertising identifier (IDFA).</li>
+  <li>No access to your location, contacts, photos, camera, microphone or health data.</li>
+  <li>No selling or sharing of personal information for cross-context behavioral advertising.</li>
+</ul>
+
+<h2 id="retention">5. How long we keep data</h2>
+<ul>
+  <li><strong>On your device:</strong> until you delete it. Settings → Reset all data deletes your
+    log, yards, alerts, settings, cached prices and the rating and card counters. It keeps two
+    small feature-use counters (the free-plan limits you reached and your yard counts, see 2.2),
+    so later updates of those counts can include activity from before the reset. Deleting the
+    app removes everything except two small items that Expo's notification software keeps in
+    the iOS keychain if you ever allowed notifications: an installation ID, and a record that
+    push registration is on (with the last push token sent to Expo). iOS can keep them after an
+    app is deleted. If you reinstall, the app uses them to send Expo your phone's push token
+    again, even before you allow notifications (see 2.3). They are used only to route
+    notifications.</li>
+  <li><strong>Alert server:</strong> until you turn notifications off in the app or use Reset all
+    data. Either one asks our server to delete your record right away (see section 6). We also
+    delete a record when Expo tells us its push token is no longer registered, for example after
+    you delete the app, but we only learn that when one of your alerts fires and we try to send
+    it. A record with no alerts, or whose alerts never fire, is never removed automatically. So
+    before you delete the app, turn notifications off in the app. If you have already deleted
+    it, you can ask us to delete the record (see "Ask us" in section 6). Tell us the alerts you
+    had (metal, above or below, and price) so we can find it. If you had no alerts, we have no
+    way to tell which record is yours.</li>
+  <li><strong>RevenueCat:</strong> for as long as we use RevenueCat to run purchases, or until
+    you ask us to delete it. Usage counts are overwritten with the latest value. They aren't
+    kept as a history.</li>
+  <li><strong>Support emails:</strong> as long as needed to help you, plus normal email records.</li>
+  <li><strong>Price requests:</strong> our server keeps no logs that identify you.</li>
+</ul>
+
+<h2 id="choices">6. Your choices and rights</h2>
+<ul>
+  <li><strong>Turn off price alerts:</strong> Settings → Notifications. The app asks our server
+    to delete your alert record immediately, so you need to be online. If you turned
+    notifications off in iOS Settings first, the app can't send that request. Turn them back
+    on in iOS Settings, then off in the app, or email us. Turning notifications off, in the app
+    or in iOS Settings, doesn't stop the Expo software from sending Expo your phone's push
+    token and installation ID (see 2.3).</li>
+  <li><strong>Skip the "How did you find ScrapMetal Intel?" card:</strong> close it. Nothing
+    changes in the app either way.</li>
+  <li><strong>Reset all data</strong> (Settings) deletes your log, yards, alerts, settings,
+    cached prices and the rating and card counters on your device, and asks our server to
+    delete your alert record. It does not delete the two feature-use counters described in
+    section 5, the random RevenueCat ID, or RevenueCat's records, which include the purchase
+    history Apple and RevenueCat need to restore your purchases.</li>
+  <li><strong>Usage counts</strong> (section 2.2): version 2.2.2 has no switch to stop them.
+    You can ask us to delete them; see "Ask us" below for what we can find.</li>
+  <li><strong>Delete the app</strong> to remove the app's data from your device (see section 5
+    for the Expo keychain items that can remain), including the random RevenueCat ID; to remove
+    your alert record from our server too, turn notifications off in the app first (see
+    section 5). If you reinstall, the app creates a new random ID. Restore Purchases reconnects
+    anything you bought.</li>
+  <li><strong>Ask us</strong> to access or delete your data, at
+    <a href="mailto:support@andromedakinship.com">support@andromedakinship.com</a>. There's no
+    account, so we can only find RevenueCat records we can connect to you. If you bought
+    something, include the order ID from Apple's receipt email. If you never bought anything,
+    we usually have no way to tell which random ID is yours. For your alert record on our
+    server, see section 5.</li>
+  <li>Depending on where you live (for example the EU, the UK or California), you may have
+    rights to access, correct, delete or object to the use of your data. You may also complain
+    to your local data protection authority. We will honor these rights.</li>
+  <li>For readers in the EU and UK, our legal bases are:
+    <ul>
+      <li>performing our agreement with you (purchases, and alerts you asked for)</li>
+      <li>our legitimate interests (preventing fraud, and measuring features and marketing in aggregate)</li>
+      <li>your permission (notifications)</li>
+      <li>our legitimate interests in keeping push delivery to your phone working (the Expo
+        registration described in 2.3, which in version 2.2.2 continues after notifications are
+        turned off)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="providers">7. Service providers</h2>
+<div class="table-wrap">
+<table>
+  <tr><th>Provider</th><th>What it does for us</th><th>Policy</th></tr>
+  <tr><td>RevenueCat, Inc.</td><td>In-app purchases, purchase history, usage counts, Apple Ads attribution</td><td><a href="https://www.revenuecat.com/privacy/">revenuecat.com/privacy</a></td></tr>
+  <tr><td>Cloudflare, Inc.</td><td>Hosts our price and alert server</td><td><a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a></td></tr>
+  <tr><td>650 Industries, Inc. (Expo)</td><td>Push-notification delivery</td><td><a href="https://expo.dev/privacy">expo.dev/privacy</a></td></tr>
+  <tr><td>Apple Inc.</td><td>App Store, payments, push notifications, rating prompt, Apple Ads attribution</td><td><a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td></tr>
+</table>
+</div>
+<p class="note">These providers may process data in the United States and other countries.</p>
+<p>We share data only with the providers above, and only for the purposes described in this
+  policy. RevenueCat, Cloudflare and Expo process it on our behalf, as our service providers,
+  under their data processing terms with us. We confirm that each of them provides the same or
+  equal protection of your data as described in this policy and as required by Apple's App Store
+  Review Guidelines, and none of them may sell it or use it for their own advertising. Apple
+  handles App Store, payment, push and Apple Ads data as an independent company under its own
+  privacy policy.</p>
+
+<h2 id="children">8. Children</h2>
+<p>Scrap Metal Intel is not directed at children under 13, and we do not knowingly collect
+  information from children.</p>
+
+<h2 id="changes">9. Changes to this policy</h2>
+<p>If we change what the app collects, we will update this page and the "Last updated" date
+  before the change ships.</p>
+
+<h2 id="contact">10. Contact</h2>
+<p>Andromeda Kinship LLC, Fall River, MA, USA ·
+  <a href="mailto:support@andromedakinship.com">support@andromedakinship.com</a></p>
 
 <hr style="margin-top: 48px; border: none; border-top: 1px solid #e5e5e5;">
 <p style="color: #888; font-size: 13px; text-align: center; margin-top: 24px;">
