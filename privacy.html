@@ -40,7 +40,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<div class="meta">Scrap Metal Intel · Last updated October 13, 2026</div>
+<div class="meta">Scrap Metal Intel · Last updated October 28, 2026</div>
 
 <p>
   Scrap Metal Intel ("the app") is published by Andromeda Kinship LLC ("we", "us"),
@@ -51,7 +51,7 @@
   <li>what it sends off your phone, who receives it and why</li>
   <li>how long it is kept and how to delete it</li>
 </ul>
-<p>It describes what the app's code actually does as of version 2.2.2.</p>
+<p>It describes what the app's code actually does as of version 2.3.0.</p>
 
 <h2>Short version</h2>
 <ul>
@@ -62,19 +62,20 @@
   <li>The app does send some data off your phone, to these places:
     <ul>
       <li><strong>RevenueCat</strong>, the service that runs our in-app purchases. It receives
-        your purchase history and a few usage counts. These are tied to a random ID the app
-        creates, not to your name or email.</li>
+        your purchase history, a few usage counts and your answers to optional one-tap
+        questions. These are tied to a random ID the app creates, not to your name or email.
+        You can turn the usage counts and answers off in Settings.</li>
       <li><strong>Our alert server</strong>, only while notifications are on in the app. It
         receives a push-notification address for your phone, your alert rules, your language
         and time zone.</li>
       <li><strong>Expo</strong>, our push-notification provider, once you have allowed
-        notifications. It receives your phone's push address and an installation ID, and keeps
-        receiving them even if you later turn notifications off (see 2.3).</li>
+        notifications. It receives your phone's push address and an installation ID. From version
+        2.3.0, turning notifications off in the app stops this too (see 2.3).</li>
       <li><strong>Our price server</strong>, for downloading prices, the same way any web page loads.</li>
     </ul>
   </li>
   <li>We use a few of those counts to see, in total across all users, which features people
-    use and how they found the app. That is analytics, and we're telling you plainly.</li>
+    use, how they found the app, and why people do or don't upgrade. That is analytics, and we're telling you plainly.</li>
 </ul>
 
 <h2 id="on-device">1. What stays on your device</h2>
@@ -86,6 +87,11 @@
   <li>A cache of the most recently downloaded prices and commentary</li>
   <li>Small counters the app uses to decide when to show Apple's rating prompt and its
     one-time "How did you find ScrapMetal Intel?" card</li>
+  <li>The push address the app last sent to our alert server, a short fingerprint of your
+    phone's push token (to notice when it changes), and whether the server accepted your
+    alerts, so the app can repair or delete that registration later</li>
+  <li>Small counters for the optional one-tap questions and the screens where you saw the
+    Pro offer</li>
 </ul>
 <p>This data lives in the app's storage on your device and is included in your normal iPhone
   or iPad backup if you use one. It isn't sent to us or to anyone else, except as described below.</p>
@@ -136,11 +142,26 @@
       <li>from version 2.2.2: your answer to the one-time "How did you find ScrapMetal Intel?"
         card, if you choose to answer. It is one option from a fixed list such as "TikTok" or
         "Friend", with no free text.</li>
+      <li>from version 2.3.0: how many times you've seen the Pro screen, from which screens
+        (for example the log limit or Settings), and how many days after install you first saw
+        it; which plan you bought and from which screen; how many days after install you first
+        got a calculator payout and first saw your pile value, and how many times you've seen
+        it; how many price alerts you have switched on, and whether our alert server currently
+        holds them</li>
+      <li>from version 2.3.0: your answers to two optional one-tap questions, if you choose to
+        answer: "What should we build next?" and, after you close the Pro screen without buying,
+        "What stopped you from going Pro?" (with which screen it was and which plan you picked
+        there, if you picked one). Each answer is one option from a fixed list, with no free
+        text.</li>
     </ul>
   </li>
 </ul>
 <p>We use this to deliver and restore your purchases, to prevent fraud, and to understand, across
   all users, which features get used and which ways of finding the app work.</p>
+<p>You can stop all of the usage counts and answers above: Settings → Share usage counts.
+  Turning it off also clears the counts and answers already sent, and hides the one-tap
+  questions. The counts are kept on your device while it is off; if you turn it back on, the
+  app sends the current counts, including activity from while it was off.</p>
 <p>We don't use it to show you ads. We don't sell it. Apart from the Apple Ads attribution
   described above, which comes from Apple, we don't combine it with data from other
   companies.</p>
@@ -171,12 +192,16 @@
 </ul>
 <p>It sends them each time the app sends your alerts to our alert server or asks it to delete
   them. It also sends them when you open the app, if your phone's push token has changed or a
-  week has passed since the last time. This continues after you turn notifications off in the
-  app or in iOS Settings, and after you use Reset all data. Expo's software keeps this
-  registration setting in the iOS keychain, so it can also continue after you delete and reinstall the app. The
-  Expo software sends Expo nothing else: no alert rules, log or yard data.</p>
-<p>No name, email, location, log or yard data is sent to the alert server. The alert server's
-  record isn't linked to your RevenueCat data.</p>
+  week has passed since the last time. From version 2.3.0, turning notifications off in the
+  app, or using Reset all data, also turns this off. If you turned notifications off in an
+  older version, the app switches this off the first time you open version 2.3.0; that first
+  time, the Expo software may already have sent it once. It continues if you only turn
+  notifications off in iOS Settings while they are still on in the app. Expo's software keeps
+  this registration setting in the iOS keychain, so if you delete the app while notifications
+  are on, it can continue after you reinstall. The Expo software sends Expo nothing else: no alert rules, log or yard data.</p>
+<p>No name, email, location, log or yard data is sent to the alert server. Your push token
+  and alert rules are never sent to RevenueCat. RevenueCat only gets the number of alerts you
+  have switched on and a yes/no for whether our alert server currently holds them (see 2.2).</p>
 
 <h3 id="you-share">2.4 Things you choose to send</h3>
 <ul>
@@ -206,9 +231,9 @@
 <h2 id="retention">5. How long we keep data</h2>
 <ul>
   <li><strong>On your device:</strong> until you delete it. Settings → Reset all data deletes your
-    log, yards, alerts, settings, cached prices and the rating and card counters. It keeps two
-    small feature-use counters (the free-plan limits you reached and your yard counts, see 2.2),
-    so later updates of those counts can include activity from before the reset. Deleting the
+    log, yards, alerts, settings, cached prices and the rating and card counters. From version
+    2.3.0 it also deletes the feature-use counters. Copies already sent to RevenueCat are
+    replaced the next time a count changes; to clear them, turn off Share usage counts. Deleting the
     app removes everything except two small items that Expo's notification software keeps in
     the iOS keychain if you ever allowed notifications: an installation ID, and a record that
     push registration is on (with the last push token sent to Expo). iOS can keep them after an
@@ -216,7 +241,8 @@
     again, even before you allow notifications (see 2.3). They are used only to route
     notifications.</li>
   <li><strong>Alert server:</strong> until you turn notifications off in the app or use Reset all
-    data. Either one asks our server to delete your record right away (see section 6). We also
+    data. Either one asks our server to delete your record right away, and the app keeps
+    asking each time you open it until the server confirms (see section 6). We also
     delete a record when Expo tells us its push token is no longer registered, for example after
     you delete the app, but we only learn that when one of your alerts fires and we try to send
     it. A record with no alerts, or whose alerts never fire, is never removed automatically. So
@@ -234,19 +260,24 @@
 <h2 id="choices">6. Your choices and rights</h2>
 <ul>
   <li><strong>Turn off price alerts:</strong> Settings → Notifications. The app asks our server
-    to delete your alert record immediately, so you need to be online. If you turned
-    notifications off in iOS Settings first, the app can't send that request. Turn them back
-    on in iOS Settings, then off in the app, or email us. Turning notifications off, in the app
-    or in iOS Settings, doesn't stop the Expo software from sending Expo your phone's push
-    token and installation ID (see 2.3).</li>
-  <li><strong>Skip the "How did you find ScrapMetal Intel?" card:</strong> close it. Nothing
-    changes in the app either way.</li>
+    to delete your alert record immediately. If you're offline, the app retries each time you
+    open it until the server confirms. Once the app has registered your alerts with version
+    2.3.0 or later, it uses the push address it stored then, so this works even if you turned
+    notifications off in iOS Settings first. For alerts last registered by an older version
+    with notifications already off in iOS Settings, turn them back on in iOS Settings, then off
+    in the app, or email us. From version 2.3.0, turning them off in the app also stops the
+    Expo software from sending Expo your push token (see 2.3).</li>
+  <li><strong>Skip the one-tap questions</strong> ("How did you find ScrapMetal Intel?", "What
+    should we build next?", "What stopped you from going Pro?"): close them. Nothing changes in
+    the app either way.</li>
   <li><strong>Reset all data</strong> (Settings) deletes your log, yards, alerts, settings,
-    cached prices and the rating and card counters on your device, and asks our server to
-    delete your alert record. It does not delete the two feature-use counters described in
-    section 5, the random RevenueCat ID, or RevenueCat's records, which include the purchase
-    history Apple and RevenueCat need to restore your purchases.</li>
-  <li><strong>Usage counts</strong> (section 2.2): version 2.2.2 has no switch to stop them.
+    cached prices, the rating and card counters and the feature-use counters on your device,
+    and asks our server to delete your alert record. It does not delete the random RevenueCat
+    ID, or RevenueCat's records, which include the purchase history Apple and RevenueCat need
+    to restore your purchases. It keeps your Share usage counts choice, so if you turned it
+    off, it stays off. Afterwards, the app asks before it turns notifications back on.</li>
+  <li><strong>Usage counts</strong> (section 2.2): Settings → Share usage counts turns them off
+    and clears what was already sent.
     You can ask us to delete them; see "Ask us" below for what we can find.</li>
   <li><strong>Delete the app</strong> to remove the app's data from your device (see section 5
     for the Expo keychain items that can remain), including the random RevenueCat ID; to remove
@@ -268,8 +299,7 @@
       <li>our legitimate interests (preventing fraud, and measuring features and marketing in aggregate)</li>
       <li>your permission (notifications)</li>
       <li>our legitimate interests in keeping push delivery to your phone working (the Expo
-        registration described in 2.3, which in version 2.2.2 continues after notifications are
-        turned off)</li>
+        registration described in 2.3)</li>
     </ul>
   </li>
 </ul>
