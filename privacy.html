@@ -40,7 +40,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<div class="meta">Scrap Metal Intel · Last updated October 28, 2026</div>
+<div class="meta">Scrap Metal Intel · Last updated October 30, 2026</div>
 
 <p>
   Scrap Metal Intel ("the app") is published by Andromeda Kinship LLC ("we", "us"),
@@ -51,7 +51,7 @@
   <li>what it sends off your phone, who receives it and why</li>
   <li>how long it is kept and how to delete it</li>
 </ul>
-<p>It describes what the app's code actually does as of version 2.3.0.</p>
+<p>It describes what the app's code actually does as of version 2.3.1.</p>
 
 <h2>Short version</h2>
 <ul>
@@ -92,6 +92,10 @@
     alerts, so the app can repair or delete that registration later</li>
   <li>Small counters for the optional one-tap questions and the screens where you saw the
     Pro offer</li>
+  <li>From version 2.3.1, if you start a free trial and allow notifications, one reminder the app
+    schedules on your phone for 2 days before the trial ends. It is created and shown on your
+    device; nothing about it is sent to us, to Expo or to RevenueCat. Turn it off in Settings →
+    Notifications → Trial reminder.</li>
 </ul>
 <p>This data lives in the app's storage on your device and is included in your normal iPhone
   or iPad backup if you use one. It isn't sent to us or to anyone else, except as described below.</p>
@@ -153,11 +157,18 @@
         "What stopped you from going Pro?" (with which screen it was and which plan you picked
         there, if you picked one). Each answer is one option from a fixed list, with no free
         text.</li>
+      <li>from version 2.3.1: how many days you've used the app, how many sessions you've had, how
+        many hauls you've logged, how many calculator payouts you've seen and how many times you've
+        opened the app from an alert (counts only, never amounts or what you logged); and your
+        answer to one more optional one-tap question, if you choose to answer: after you turn off
+        renewal during a free trial, "What made you turn off renewal?" (with which day of the trial
+        you turned it off). The answer is one option from a fixed list, with no free text.</li>
     </ul>
   </li>
 </ul>
 <p>We use this to deliver and restore your purchases, to prevent fraud, and to understand, across
-  all users, which features get used and which ways of finding the app work.</p>
+  all users, which features get used, which ways of finding the app work, and why trial users turn
+  off renewal.</p>
 <p>You can stop all of the usage counts and answers above: Settings → Share usage counts.
   Turning it off also clears the counts and answers already sent, and hides the one-tap
   questions. The counts are kept on your device while it is off; if you turn it back on, the
@@ -268,14 +279,19 @@
     in the app, or email us. From version 2.3.0, turning them off in the app also stops the
     Expo software from sending Expo your push token (see 2.3).</li>
   <li><strong>Skip the one-tap questions</strong> ("How did you find ScrapMetal Intel?", "What
-    should we build next?", "What stopped you from going Pro?"): close them. Nothing changes in
-    the app either way.</li>
+    should we build next?", "What stopped you from going Pro?", "What made you turn off
+    renewal?"): close them. Nothing changes in the app either way.</li>
+  <li><strong>Trial reminder</strong> (from version 2.3.1): Settings → Notifications → Trial
+    reminder turns off the one reminder before a free trial ends and removes one already
+    scheduled. It never leaves your device (see section 1).</li>
   <li><strong>Reset all data</strong> (Settings) deletes your log, yards, alerts, settings,
     cached prices, the rating and card counters and the feature-use counters on your device,
     and asks our server to delete your alert record. It does not delete the random RevenueCat
     ID, or RevenueCat's records, which include the purchase history Apple and RevenueCat need
     to restore your purchases. It keeps your Share usage counts choice, so if you turned it
-    off, it stays off. Afterwards, the app asks before it turns notifications back on.</li>
+    off, it stays off. Afterwards, the app asks before it turns notifications back on.
+    From version 2.3.1 it also keeps your Trial reminder choice: during a free trial, with
+    notifications allowed in iOS, that one reminder on your device is scheduled again.</li>
   <li><strong>Usage counts</strong> (section 2.2): Settings → Share usage counts turns them off
     and clears what was already sent.
     You can ask us to delete them; see "Ask us" below for what we can find.</li>
